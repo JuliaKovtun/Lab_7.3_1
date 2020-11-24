@@ -32,12 +32,6 @@ int main()
 
 
 
-
-  
-
-
-
-
     for (int i = 0; i < rowCount; i++)
         delete[] a[i];
     delete[] a;
@@ -85,7 +79,7 @@ int Count_zeros(int** a, const int rowCount, const int colCount)
     return k_zero;
 }
 
-void Count_SimilarElements(int** a, const int rowConst, const int colCount, int& m) 
+void Count_SimilarElements(int** a, const int rowConst, const int colCount, int& m)
 {
     int l = 0;
     m = 0;
@@ -93,22 +87,23 @@ void Count_SimilarElements(int** a, const int rowConst, const int colCount, int&
     int b = 0;
     for (int i = 0; i < rowConst; i++)
     {
-        
+
         for (int j = 0; j < colCount - 1; j++)
         {
             l = 0;
             b = j + 1;
-            for (b; b < colCount; b++) 
+            for (b; b < colCount; b++)
             {
                 if (a[i][j] == a[i][b])
                     l = l + 1;
-            
-            if (max < l)
-            {
-                max = l;
-                m = i + 1;
-            }
 
+                if (max < l)
+                {
+                    max = l;
+                    m = i + 1;
+                }
+
+            }
         }
     }
 }
